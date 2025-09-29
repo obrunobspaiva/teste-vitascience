@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "bd9170a8-afe9-4c49-8f14-deeb54b9249c",
+		"name": "Teste Vitascience",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41740634"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,1 @@
+Crie no mínimo 3 novos ângulos para níveis diferentes. Responda SOMENTE JSON: [{"level_target":<int>,"angle":"...","headlines":["..."],"rationale":"..."}].

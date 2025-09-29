@@ -1,0 +1,1 @@
+Atue como Eugene Schwartz. Liste no mínimo 5 melhorias. Responda SOMENTE JSON como array: [{"issue":"...","why":"...","how_eugene_fixes":"...","rewrite_example":"..."}]. Foque clareza, prova, mecanismo, especificidade, ética.

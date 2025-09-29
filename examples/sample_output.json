@@ -1,0 +1,105 @@
+[
+  {
+    "lead_hash": "f8178e33279b666fca7e4f713f8b26a4",
+    "analysis": {
+      "scale_definition": {
+        "1": "Mais Consciente (Product-aware/Most aware)",
+        "2": "Produto-consciente",
+        "3": "Solução-consciente",
+        "4": "Problema-consciente",
+        "5": "Desconhecedor (Unaware)"
+      },
+      "level": 4,
+      "level_reason": "O lead se concentra em apresentar um problema comum enfrentado por mulheres que lutam contra o peso, como o efeito sanfona e a frustração com métodos tradicionais de emagrecimento. Ele destaca a insatisfação com dietas e exercícios, sugerindo que a solução apresentada (o suco de 15 segundos) é uma resposta a esses problemas, o que indica que o público-alvo está ciente de suas dificuldades e busca uma solução.",
+      "structure": {
+        "frameworks_detected": [
+          "AIDA",
+          "PAS",
+          "BAB"
+        ],
+        "evidence": [
+          {
+            "framework": "AIDA",
+            "snippet": "Na noite do ano de 1785, Antoine Lavoisier, um químico brilhante e famoso, descobriu o caminho para emagrecer sem sacrifícios."
+          },
+          {
+            "framework": "PAS",
+            "snippet": "Na verdade, ele descobriu que existe um processo no corpo capaz de transformar a gordura em gás."
+          },
+          {
+            "framework": "BAB",
+            "snippet": "Então, se prepare: é muito rápido fazer a gordura virar gás e emagrecer sem sofrimento."
+          }
+        ]
+      },
+      "improvements": {
+        "improvements": [
+          {
+            "issue": "Falta de clareza sobre a descoberta de Lavoisier.",
+            "why": "O lead menciona uma descoberta de Lavoisier, mas não explica claramente como isso se relaciona com a perda de peso.",
+            "how_eugene_fixes": "Explicar de forma mais direta e específica como a descoberta se aplica ao emagrecimento e ao suco mencionado.",
+            "rewrite_example": "Na noite do ano de 1785, Antoine Lavoisier fez uma descoberta revolucionária: ele identificou um processo biológico que transforma a gordura em gás, permitindo que você emagreça sem dietas restritivas ou exercícios extenuantes."
+          },
+          {
+            "issue": "Prova insuficiente para apoiar as alegações.",
+            "why": "Embora mencione fontes, não há evidências concretas que liguem a descoberta de Lavoisier ao emagrecimento.",
+            "how_eugene_fixes": "Incluir estudos ou dados que comprovem a eficácia do método proposto, aumentando a credibilidade.",
+            "rewrite_example": "Estudos recentes demonstram que a transformação de gordura em gás é um processo natural que pode ser acelerado com a ingestão de certos nutrientes, como os presentes neste suco."
+          },
+          {
+            "issue": "Especificidade insuficiente sobre o suco.",
+            "why": "O lead menciona um 'poderoso suco', mas não fornece detalhes sobre os ingredientes ou como ele funciona.",
+            "how_eugene_fixes": "Descrever os ingredientes do suco e como cada um contribui para a perda de peso.",
+            "rewrite_example": "Este suco de 15 segundos é feito com ingredientes como limão, gengibre e chia, que juntos aceleram o metabolismo e ajudam a queimar gordura de forma eficaz."
+          },
+          {
+            "issue": "Falta de ética na apresentação das soluções.",
+            "why": "A promessa de emagrecimento rápido sem esforço pode ser vista como enganosa.",
+            "how_eugene_fixes": "Ser honesto sobre o que o suco pode realmente fazer e enfatizar a importância de um estilo de vida saudável.",
+            "rewrite_example": "Embora este suco possa ajudar a acelerar a perda de peso, é fundamental combiná-lo com uma alimentação equilibrada e hábitos saudáveis para resultados duradouros."
+          },
+          {
+            "issue": "Narrativa pessoal não conecta com a solução.",
+            "why": "A história pessoal do narrador é interessante, mas não se liga diretamente à solução proposta.",
+            "how_eugene_fixes": "Fazer uma conexão mais clara entre a experiência pessoal e a descoberta do suco.",
+            "rewrite_example": "Após enfrentar minha própria luta contra a obesidade e a saúde debilitada, descobri que a verdadeira mudança começou quando incorporei este suco simples à minha rotina, transformando não apenas meu corpo, mas minha vida."
+          }
+        ]
+      },
+      "new_angles": {
+        "angles": [
+          {
+            "level_target": 1,
+            "angle": "A Revolução do Emagrecimento: O Segredo do Gás",
+            "headlines": [
+              "Descubra como transformar gordura em gás e emagrecer sem esforço!",
+              "O método inusitado de Lavoisier que pode mudar sua vida!",
+              "Chega de dietas malucas: o suco que faz a gordura evaporar!"
+            ],
+            "rationale": "Esse ângulo foca na inovação da descoberta de Lavoisier e como ela pode revolucionar a forma de emagrecer, despertando a curiosidade e o interesse do público em aprender mais sobre esse método inusitado."
+          },
+          {
+            "level_target": 2,
+            "angle": "Histórias de Superação: De Obeso a Mentor de Emagrecimento",
+            "headlines": [
+              "Como um médico obeso transformou sua vida e agora ajuda milhares!",
+              "A jornada de Dayan Siebra: superando o peso e a saúde para inspirar outros!",
+              "De crise de pânico a sucesso: a verdadeira história por trás da transformação!"
+            ],
+            "rationale": "Neste ângulo, o foco é a história pessoal de Dayan Siebra, que se conecta emocionalmente com o público, mostrando que é possível superar desafios e se tornar um exemplo para os outros."
+          },
+          {
+            "level_target": 3,
+            "angle": "O Impacto da Saúde Mental no Emagrecimento",
+            "headlines": [
+              "Como a ansiedade e o estresse podem sabotar suas metas de emagrecimento!",
+              "A relação entre saúde mental e perda de peso: o que você precisa saber!",
+              "Transformando sua mente: o primeiro passo para emagrecer de forma saudável!"
+            ],
+            "rationale": "Esse ângulo aborda a conexão entre saúde mental e emagrecimento, enfatizando a importância de cuidar da mente para alcançar os objetivos de perda de peso, trazendo uma abordagem holística para o tema."
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,1 @@
+Identifique frameworks de copy presentes (PAS, AIDA, 4P, BAB, Big Idea). Responda SOMENTE JSON: {"frameworks_detected":[...],"evidence":[{"framework":"AIDA","snippet":"..."}]}.
