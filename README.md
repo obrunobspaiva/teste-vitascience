@@ -4,7 +4,7 @@
 
 ## 🎯 Visão Geral
 
-Este projeto implementa um clone digital do lendário copywriter Eugene Schwartz, capaz de analisar copies de marketing e fornecer insights profundos baseados nos princípios de "Breakthrough Advertising". O sistema utiliza n8n para orquestração, Claude 3.5 Sonnet para análise inteligente e PostgreSQL com pgvector para armazenamento de conhecimento vetorizado.
+Este projeto implementa um clone digital do lendário copywriter Eugene Schwartz, capaz de analisar copies de marketing e fornecer insights profundos baseados nos princípios de "Breakthrough Advertising". O sistema utiliza n8n para orquestração, chat-gpt-4o-min para análise inteligente e PostgreSQL com pgvector para armazenamento de conhecimento vetorizado.
 
 ## 📋 Índice
 
@@ -23,11 +23,11 @@ Este projeto implementa um clone digital do lendário copywriter Eugene Schwartz
 
 O projeto foi desenvolvido seguindo uma metodologia estruturada baseada no planejamento inicial gerado pelo ChatGPT. Todo o processo de estruturação está documentado em:
 
-📄 **[Documento de Estruturação da Solução](documents/ESTRUTURACAO_SOLUCAO.md)**
+📄 **[Documento de Estruturação da Solução](documents/1-ESTRUTURACAO_SOLUCAO.md)**
 
 **Principais Decisões Arquiteturais:**
 - **n8n** para orquestração visual de workflows
-- **Claude 3.5 Sonnet** para análise de copy (superior ao GPT-4 para análise estrutural)
+- **chat-gpt-4o-min** para análise de copy
 - **PostgreSQL + pgvector** para busca semântica no conhecimento do Eugene
 - **Supabase** para facilitar deploy e gestão do banco
 - **OpenAI Embeddings** para vetorização do conteúdo
@@ -219,7 +219,7 @@ Retorne APENAS um JSON válido com esta estrutura:
    - Criatividade das headlines
 
 4. **Performance Técnica**
-   - Tempo médio: ~25 segundos
+   - Tempo médio: ~5 minutos
    - Taxa de sucesso: >95%
    - Consistência do schema JSON: 100%
 
@@ -227,7 +227,6 @@ Retorne APENAS um JSON válido com esta estrutura:
 - Testes automatizados via Postman
 - Validação manual com rubrica 1-5
 - Comparação com análises de referência
-- Testes de carga e estresse
 
 ---
 
@@ -235,23 +234,18 @@ Retorne APENAS um JSON válido com esta estrutura:
 
 ### 4.1 Vídeo Demonstrativo no Loom
 
-🎥 **[Link do Vídeo Loom (5-10 minutos)](https://www.loom.com/share/SEU_LINK_AQUI)**
-
-**Roteiro do Vídeo:**
-1. **Contexto** (30s): Missão e visão do sistema
-2. **Arquitetura** (1min): Diagrama e componentes
-3. **n8n em Ação** (3-4min): Workflow rodando com VSL real
-4. **Banco & RAG** (1-2min): Schema e busca semântica
-5. **Prompts** (1min): Documentação e reutilização
-6. **Validação** (1min): Métricas e próximos passos
-7. **Encerramento** (30s): Repositório e instruções
+🎥 **Links do Vídeo Loom (5-10 minutos):**
+- **Vídeo 1**: [https://www.loom.com/share/a1f0efe2453a433db3a342a400463e00](https://www.loom.com/share/a1f0efe2453a433db3a342a400463e00)  
+- **Vídeo 2**: [https://www.loom.com/share/c3ba4f32f52341479bd0c8f59b85f58a](https://www.loom.com/share/c3ba4f32f52341479bd0c8f59b85f58a)  
+- **Vídeo 3**: [https://www.loom.com/share/4b1ad080ea5b4d9bbd4e413cf99eceb7](https://www.loom.com/share/4b1ad080ea5b4d9bbd4e413cf99eceb7)  
+- **Vídeo 4**: [https://www.loom.com/share/8a86de464e054dba9e8d2da0a8bfb4d8](https://www.loom.com/share/8a86de464e054dba9e8d2da0a8bfb4d8)
 
 ### 4.2 Instruções Claras de Uso
 
 #### Pré-requisitos
 - **n8n** (versão 1.0+)
 - **PostgreSQL** com extensão pgvector
-- **APIs**: Anthropic (Claude) + OpenAI (embeddings)
+- **APIs**: OpenAI (embeddings)
 
 #### Instalação Rápida
 
@@ -261,11 +255,10 @@ git clone https://github.com/seu-usuario/teste-vitascience.git
 cd teste-vitascience
 
 # 2. Configure variáveis de ambiente
-cp .env.example .env
 # Edite .env com suas chaves de API
 
 # 3. Setup do banco de dados
-psql -U postgres -d sua_base -f db/schema.sql
+# use o arquivo db/schema.sql para criar as tabelas no PostgreSQL
 
 # 4. Vetorize o conhecimento do Eugene
 python ingestion/populate_chunks.py
@@ -274,7 +267,6 @@ python ingestion/populate_chunks.py
 # Acesse n8n → Import → Selecione n8n/Workflow-Teste-Vitascience-Bruno-Paiva.json
 
 # 6. Configure credenciais no n8n
-# - Anthropic API Key
 # - OpenAI API Key  
 # - PostgreSQL Connection
 ```
@@ -292,7 +284,7 @@ curl -X POST http://localhost:5678/webhook/lead/analyze \
 
 ### 4.3 Repositório GitHub Organizado
 
-📁 **[Repositório Completo](https://github.com/seu-usuario/teste-vitascience)**
+📁 **Repositório Completo**
 
 **Estrutura Organizada:**
 ```
@@ -340,7 +332,7 @@ teste-vitascience/
 
 | Métrica | Valor | Observações |
 |---------|-------|-------------|
-| **Tempo de Resposta** | ~25s | Média para copy de 2000 palavras |
+| **Tempo de Resposta** | ~5m | Média para copy de 2000 palavras |
 | **Taxa de Sucesso** | >95% | Análises completadas com sucesso |
 | **Precisão Classificação** | 87% | Comparado com análise manual |
 | **Consistência Schema** | 100% | JSON sempre válido |
@@ -350,63 +342,25 @@ teste-vitascience/
 ## 🔧 Tecnologias Utilizadas
 
 - **Orquestração**: n8n (workflow visual)
-- **LLM Principal**: Claude 3.5 Sonnet (Anthropic)
+- **LLM Principal**: chat-gpt-4o-mini
 - **Embeddings**: OpenAI text-embedding-3-small
 - **Banco de Dados**: PostgreSQL + pgvector
 - **Hospedagem DB**: Supabase
 - **Linguagem**: Python (scripts), JavaScript (n8n)
 - **Versionamento**: Git + GitHub
 
-## 🎯 Próximos Passos
-
-### Versão 1.1 (Próximas 2 semanas)
-- [ ] Interface web para análise interativa
-- [ ] Cache de embeddings para otimização
-- [ ] Métricas de monitoramento em tempo real
-- [ ] Validação automática de hallucination
-
-### Versão 2.0 (Próximo mês)
-- [ ] Suporte a múltiplos idiomas
-- [ ] Análise de concorrentes
-- [ ] Geração automática de variações A/B
-- [ ] API REST documentada com OpenAPI
-
-### Versão 3.0 (Próximos 3 meses)
-- [ ] Treinamento de modelo específico
-- [ ] Integração com ferramentas de marketing
-- [ ] Predição de taxa de conversão
-- [ ] Dashboard analytics completo
-
-## 🤝 Contribuição
-
-1. Fork o repositório
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
 ## 👥 Contato
 
 **Desenvolvedor**: Bruno Paiva  
-**Email**: bruno@vitascience.com  
-**LinkedIn**: [linkedin.com/in/bruno-paiva](https://linkedin.com/in/bruno-paiva)  
-**GitHub**: [github.com/bruno-paiva](https://github.com/bruno-paiva)
+**Email**: brunobspaiva@gmail.com  
+**LinkedIn**: [linkedin.com/in/brunobspaiva](https://linkedin.com/in/brunobspaiva)  
+**GitHub**: [github.com/obrunobspaiva](https://github.com/obrunobspaiva)
 
 ## 🙏 Agradecimentos
 
 - **Eugene Schwartz**: Pela metodologia revolucionária dos 5 níveis
 - **Vitascience**: Pela oportunidade de desenvolvimento
-- **Comunidade n8n**: Pelo suporte e documentação
-- **Anthropic**: Pela API do Claude 3.5 Sonnet
 
 ---
-
-**Versão**: 1.0.0  
-**Última Atualização**: Janeiro 2024  
-**Status**: ✅ Produção Ready
 
 **🎯 Objetivo Alcançado**: Clone digital funcional do Eugene Schwartz capaz de analisar copies e fornecer insights profundos baseados na metodologia dos 5 Níveis de Consciência do Mercado.
